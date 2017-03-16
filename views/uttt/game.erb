@@ -1,0 +1,36 @@
+<div class="header">
+  <a href="/ttt">leave</a>
+  <span id="version">
+    <a title="Change colors!" href="javascript:togglecolors();">paint!</a><br>
+  </span>
+  <h1 id="uttt_title">Ultimate Tic Tac Toe</h1>
+  <h1 id="win_title"><span></span>
+  <h1 id="names_title">
+    <span id="p1name"></span>
+    &nbsp;vs&nbsp;
+    <span id="p2name"></span>
+  </h1>
+</div>
+
+<%= erb :"uttt/field" %>
+
+<div id="header_infos">
+  Move-Nr:
+  <span id="move_nr">0</span>&nbsp;&nbsp;&nbsp;
+  <span id="whoseturn">Whose Turn is it?</span>
+  <span id="rematch"><a href="#" onclick="askRematch();">Rematch!</a></span>
+</div>
+
+<div id="info_box">
+  Info-Box
+</div>
+
+<%= erb :"uttt/dialoges" %>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script type="text/javascript" charset="utf-8">
+  // Das JSON Objekt mit den Infos aus dem Backend auspacken:
+  var ruby = $.parseJSON('<%= @ruby %>');
+</script>
+<script src="/md5-min.js" type="text/javascript" charset="utf-8"></script>
+<script src="/script.js" type="text/javascript" charset="utf-8"></script>

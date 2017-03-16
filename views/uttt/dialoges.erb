@@ -1,0 +1,52 @@
+
+<!-- Wird eingeblendet, wenn keine Cookies da sind, und noch nicht zwei Spieler in der DB stehen-->
+<div class="form_container">
+<form id="first_contact" action="/uttt/setname" autocomplete="off" method="post" accept-charset="utf-8">
+  <% if @showurl %>
+  Send your opponent the URL to this page:
+  <div class="urlinput">http://bejofo.net/ttt/<%= @gameid %></div><br/>
+  <% else %>
+  <p>
+    <%= @p1name %> wants to play UTTT with you!<br>
+    If you don't know the rules,<br>
+    you can find them
+    <a href="http://mathwithbaddrawings.com/2013/06/16/ultimate-tic-tac-toe/" target="_blank">here</a>.
+  </p>
+  <% end %>
+  Type in your name:<input name="name" type="text" size="20"></br>
+  <a id="pwhint" href="javascript:useapassword();">I want to use a password</a>
+  <span id="pwfield">Password:<input name="hash" type="password" size="20"></span>
+  </br>
+  <input type="hidden" name="custompw" value="void">
+  <input type="hidden" name="gameid" value="<%= @gameid %>">
+  <input class="button" type="submit" value="GO!">
+</form>
+</div>
+
+<!-- Wird eingeblendet, wenn keine Cookies da sind, jedoch schon zwei spieler in der DB stehen-->
+<div class="form_container">
+<form id="player_select" action="/uttt/playerselect" autocomplete="off" method="post" accept-charset="utf-8">
+  You can resume the game.<br />
+  Who are you?<br />
+  <label>
+    <input id="player1radio" type="radio" name="name" value="void">
+    <span id="player1span"></span>
+  </label><br>
+  <label>
+    <input id="player2radio" type="radio" name="name" value="void">
+    <span id="player2span"></span>
+  </label><br>
+  <div id="ask_password">
+    Password:
+    <input id="input_password" name="hash" type="password" size="20">
+  </div>
+  <input type="hidden" name="gameid" value="<%= @gameid %>">
+  <input class="button" type="submit" value="GO!">
+</form>
+</div>
+
+<div class="form_container" style="display: block;">
+  <form id="loading_screen">
+    Loading...
+  </form>
+</div>

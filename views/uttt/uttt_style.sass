@@ -1,0 +1,433 @@
+/* RESET */
+html, body, div, span, h1, h2, h3, h4, h5, h6, p, pre, a, big, code, em, img, small, strong, b, u, i, ul, li,
+form, table, tbody, tfoot, thead, tr, th, td, canvas, footer, header, audio, video
+  margin: 0
+  padding: 0
+  border: 0
+  font-size: 100%
+  font: inherit
+  vertical-align: baseline
+footer, header
+  display: block
+body
+  line-height: 1
+ol, ul
+  list-style: none
+table
+  border-collapse: collapse
+  border-spacing: 0
+/*  ~~~~~~~~~~   END OF RESET   ~~~~~~~~~~  */
+
+/* Variables */
+// Generelle Farben:
+$loading: #eeeeee
+
+// Standard-Farbschema:
+$red: #FF5F5C
+$blue: #46d7ff
+$light_red: #ffdbd5
+$light_blue: #ccf5ff
+$yellow: #ffff00
+$yellow2: #fffecd
+$border: #555555
+$background: #FFFFFF
+$text: #000000
+
+// Eighties-Farbschema
+$red_e: #f87cf2
+$blue_e: #00eade
+$light_red_e: #ffe7fd
+$light_blue_e: #d7fffd
+$yellow_e: #ff9a77
+$yellow2_e: #fff1b6
+$border_e: #000000
+$background_e: #ffffff
+$text_e: #333333
+
+// Dunkles-Farbschema
+$red_d: #DC1833
+$blue_d: #3341FF
+$light_red_d: #54121A
+$light_blue_d: #001261
+$yellow_d: #4F2E70
+$yellow2_d: #321259
+$border_d: #D0D2D1
+$background_d: #151515
+$text_d: #D0D2D1
+
+// Plus-Farbschema
+$red_p: #cb4b39
+$blue_p: #38b1ca
+$light_red_p: #e59389
+$light_blue_p: #97e3f3
+$yellow_p: #d4f86b
+$yellow2_p: #acc466
+$border_p: #000000
+$background_p: #f8e1c9
+$text_p: #000000
+
+/* Variables End */
+
+/* Animations */
+@keyframes blink
+  0%
+    background-color: $yellow
+  50%
+    background-color: $yellow2
+  100%
+    background-color: $yellow
+    
+@-webkit-keyframes blink
+  0%
+    background-color: $yellow
+  50%
+    background-color: $yellow2
+  100%
+    background-color: $yellow
+
+@keyframes animate
+  0%
+    background-color: none
+  50%
+    background-color: $background
+  100%
+    background-color: none
+@-webkit-keyframes animate
+  0%
+    background-color: none
+  50%
+    background-color: $background
+  100%
+    background-color: none
+/* Animations end */
+
+body
+  background-color: $background
+  color: $text
+
+.form_container
+  display: none
+  position: fixed
+  top: 0
+  right: 0
+  bottom: 0
+  left: 0
+  background-color: #999999
+  background-color: rgba(0,0,0,0.5)
+  z-index: 1000
+
+form
+  border: 1px solid $border
+  background-color: white
+  margin: 20% auto 0 auto
+  max-width: 350px
+  padding: 40px 40px 40px
+  text-align: right
+  line-height: 180%
+  -webkit-border-radius: 6px
+  -moz-border-radius: 6px
+  border-radius: 6px
+  &#loading_screen
+    width: 350px
+    height: 165px
+    line-height: 160px
+    text-align: center
+    background-color: $loading
+  .urlinput
+    width: 230px
+    display: inline-block
+    text-align: left
+    line-height: 20px
+    margin-bottom: 10px
+  input, .urlinput
+    padding: 2px
+    font-size: 14px
+    font-family: 'Open Sans'
+    border: 1px solid $border
+    height: 20px
+    margin-top: 5px
+    margin-left: 5px
+    box-shadow: inset 0 0 1px #999999
+    -moz-box-shadow: inset 0 0 1px #999999
+    -webkit-border-radius: 2px
+    -moz-border-radius: 2px
+    border-radius: 2px
+  .button
+    border: 1px solid $border
+    height: 30px
+    background-color: $yellow
+    font:
+      family: 'Open Sans'
+      size: inherit
+    margin: 10px 0 0 0
+  #pwfield
+    display: none
+  #pwhint
+    display: block
+    margin: 0px 0 -32px 0
+  #ask_password
+    display: none
+  p
+    line-height: 130%
+    margin-bottom: 10px
+
+#rematch
+  display: none
+
+#overlay
+  position: fixed
+  top: 0
+  right: 0
+  bottom: 0
+  left: 0
+  background: url('/images/lupe-bg.png')
+  z-index: 1000
+
+// Text-Styling
+body
+  width: 100%
+  font:
+    family: 'Open Sans'
+    size: 18px
+    weight: 300
+  line-height: 120%
+  text-align: center
+
+h1
+  clear: both
+  padding-top: 10px
+  font-size: 28px
+  margin: 10px
+  &.index
+    font-size: 46px
+  &#names_title
+    display: none
+
+// Diverse
+.header
+  margin: 0
+  padding: 1px 4px 1px 4px
+  margin: 0 auto 20px auto
+  text-align: center
+  a
+    float: left
+    margin-right: -130px
+  span#version
+    a
+      margin: 0
+    float: right
+  &.index
+    margin: 15px auto 10px auto
+
+#win_title
+  padding: 0 3px
+  display: none
+#p1name
+  padding: 0 3px
+  background-color: $blue
+#p2name
+  padding: 0 3px
+  background-color: $red
+#p1name, #p2name
+  -webkit-border-radius: 4px
+  -moz-border-radius: 4px
+  border-radius: 4px
+
+#header_infos
+  margin-bottom: 10px
+  #move_nr
+    padding: 0 30px 0 5px
+
+#info_box
+  background-color: $yellow2
+  padding: 5px
+  border: 1px solid $border
+  display: none
+  margin: 0 auto 10px auto
+  max-width: 400px
+  box-shadow: 1px 1px 2px #bbbbbb
+  -moz-box-shadow: 1px 1px 2px #bbbbbb
+  -webkit-border-radius: 2px
+  -moz-border-radius: 2px
+  border-radius: 2px
+
+// The Tic Tac Toe Fields - JS soll das responsive machen!
+#big_field
+  width: 500px
+  height: 500px
+  margin: 30px auto 10px auto
+
+.small_field
+  height: 80%
+  width: 80%
+  margin: 11% auto
+
+.cell
+  float: left
+  height: 32%
+  width: 32%
+  &.center
+    border:
+      left: 1px solid $border
+      right: 1px solid $border
+  &.middle
+    border:
+      top: 1px solid $border
+      bottom: 1px solid $border
+
+.small_cell
+  &.yellow
+    background-color: $yellow2
+    &.interactive
+      cursor: pointer
+      animation-name: blink
+      animation-duration: 3s
+      animation-iteration-count: infinite
+      animation-timing-function: linear
+      -webkit-animation-timing-function: linear
+      -webkit-animation-name: blink
+      -webkit-animation-duration: 3s
+      -webkit-animation-iteration-count: infinite
+  &.player1, &.player2
+    position: relative
+    display: block
+  &.player1:after, &.player2:after, .animator
+    content: ''
+    width: 85%
+    height: 85%
+    margin: 7.5%
+    position: absolute
+    top: 0
+    left: 0
+    bottom: 0
+    right: 0
+    -webkit-border-radius: 4px
+    -moz-border-radius: 4px
+    border-radius: 4px
+  &.player1:after
+    background-color: $blue
+  &.player2:after
+    background-color: $red
+  &.loading
+    position: relative
+    display: block
+  &.loading:after
+    content: ''
+    background-image: url('/images/ajax-loader.gif')
+    background-size: 100%
+    width: 100%
+    height: 100%
+    opacity: 0.3
+    top: 0
+    left: 0
+    bottom: 0
+    right: 0
+    position: absolute
+
+.animator
+  z-index: 500
+  animation-name: animate
+  animation-duration: 0.3s
+  animation-iteration-count: 3
+  animation-timing-function: linear
+  -webkit-animation-timing-function: linear
+  -webkit-animation-name: animate
+  -webkit-animation-duration: 0.3s
+  -webkit-animation-iteration-count: 3
+
+.big_cell
+  &.center
+    border:
+      left: 3px solid $border
+      right: 3px solid $border
+  &.middle
+    border:
+      top: 3px solid $border
+      bottom: 3px solid $border
+
+.big_cell
+  &.yellow
+    background-color: $yellow2
+  &.player1
+    background-color: $light_blue
+  &.player2
+    background-color: $light_red
+
+@media (max-width: 500px)
+  form
+    padding: 20px
+  body
+    font-size: 14px
+  h1
+    font-size: 24px
+    &.index
+      font-size: 24px
+
+
+@mixin colors($name,$red,$blue,$light_red,$light_blue,$yellow,$yellow2,$border,$background,$text)
+  @keyframes #{$name}
+    0%
+      background-color: $yellow
+    50%
+      background-color: $yellow2
+    100%
+      background-color: $yellow
+  @-webkit-keyframes #{$name}
+    0%
+      background-color: $yellow
+    50%
+      background-color: $yellow2
+    100%
+      background-color: $yellow
+  body.#{$name}
+    background-color: $background
+    color: $text
+    .big_cell
+      &.yellow
+        background-color: $yellow2
+      &.player1
+        background-color: $light_blue
+      &.player2
+        background-color: $light_red
+    .small_cell
+      &.player1:after
+        background-color: $blue
+      &.player2:after
+        background-color: $red
+    .small_cell
+      &.yellow
+        background-color: $yellow2
+      &.interactive
+        animation-name: $name
+        -webkit-animation-name: $name
+    #info_box
+      background-color: $yellow2
+    #p1name
+      background-color: $blue
+    #p2name
+      background-color: $red
+    #info_box
+      border: 1px solid $border
+    .cell
+      &.center
+        border:
+          left: 1px solid $border
+          right: 1px solid $border
+      &.middle
+        border:
+          top: 1px solid $border
+          bottom: 1px solid $border
+    .big_cell
+      &.center
+        border:
+          left: 3px solid $border
+          right: 3px solid $border
+      &.middle
+        border:
+          top: 3px solid $border
+          bottom: 3px solid $border
+
+
+@include colors(eighties,$red_e,$blue_e,$light_red_e,$light_blue_e,$yellow_e,$yellow2_e,$border_e,$background_e,$text_e)
+@include colors(dark,$red_d,$blue_d,$light_red_d,$light_blue_d,$yellow_d,$yellow2_d,$border_d,$background_d,$text_d)
+@include colors(plus,$red_p,$blue_p,$light_red_p,$light_blue_p,$yellow_p,$yellow2_p,$border_p,$background_p,$text_p)
